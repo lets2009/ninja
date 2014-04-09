@@ -8,11 +8,7 @@ describe GovDate, "standard" do
     @gov_date = GovDate.new
   end
 
-  it "first should be 1" do
-    @gov_date.first.should == 1
-  end
-
-  it "2014-04-01 to_jdate should be " do
+  it "2014-04-01 to_jdate should be 平成26年04月01日" do
     date = Date.new(2014, 4 ,1)
     @gov_date.to_jdate(date).should == "平成26年04月01日"
   end
