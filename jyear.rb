@@ -1,11 +1,11 @@
-# coding: sjis
+# coding: utf-8
 
 #	jyear.rb $Revision: 1.1 $
 #	
-#	¼—ï‚ğ˜a—ï‚É•ÏŠ·‚·‚éƒvƒ‰ƒOƒCƒ“B
-#	“ú‹L‚âƒcƒbƒRƒ~‚Ì“ú•tƒtƒH[ƒ}ƒbƒg‚Åg‚¤B
-#	u%Yv‚Åu2005v‚Ì‚Æ‚±‚ë‚ğAu%Kv‚Åu•½¬17v‚Æ•\¦B
-#	plugin‚É“ü‚ê‚é‚¾‚¯‚Å“®ì‚·‚éB
+#	è¥¿æš¦ã‚’å’Œæš¦ã«å¤‰æ›ã™ã‚‹ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã€‚
+#	æ—¥è¨˜ã‚„ãƒ„ãƒƒã‚³ãƒŸã®æ—¥ä»˜ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã§ä½¿ã†ã€‚
+#	ã€Œ%Yã€ã§ã€Œ2005ã€ã®ã¨ã“ã‚ã‚’ã€ã€Œ%Kã€ã§ã€Œå¹³æˆ17ã€ã¨è¡¨ç¤ºã€‚
+#	pluginã«å…¥ã‚Œã‚‹ã ã‘ã§å‹•ä½œã™ã‚‹ã€‚
 #	
 # Copyright (c) 2005 sasasin/SuzukiShinnosuke<sasasin@sasasin.sytes.net>
 # You can distribute this file under the GPL.
@@ -18,19 +18,19 @@ unless Time::new.respond_to?( :strftime_jyear_backup ) then
 			def strftime( format )
 				case self.year
 					when 0 .. 1926
-						gengo = "ÌX"
+						gengo = "æ˜”ã€…"
 						if self.year == 1926 && self.month == 12 && self.day >=25 then
-							gengo = "º˜aŒ³”N"
+							gengo = "æ˜­å’Œå…ƒå¹´"
 						end
 					when 1927 .. 1989
 						jyear = self.year - 1925
-						gengo = "º˜a" + jyear.to_s
+						gengo = "æ˜­å’Œ" + jyear.to_s
 						if self.year == 1989 && self.month == 1 && self.day >= 8 then
-							gengo = "•½¬Œ³”N"
+							gengo = "å¹³æˆå…ƒå¹´"
 						end
 					else
 						jyear = self.year - 1988
-						gengo = "•½¬" + jyear.to_s
+						gengo = "å¹³æˆ" + jyear.to_s
 				end
 				strftime_jyear_backup( format.gsub( /%K/, gengo ) )
 			end

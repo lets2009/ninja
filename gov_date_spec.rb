@@ -1,4 +1,4 @@
-# coding: sjis
+# coding: utf-8
 
 $:.unshift File.dirname(__FILE__)
 require 'gov_date'
@@ -14,7 +14,7 @@ describe GovDate, "standard" do
 
   it "2014-04-01 to_jdate should be " do
     date = Date.new(2014, 4 ,1)
-    @gov_date.to_jdate(date).should == "•½¬26”N04Œ01“ú"
+    @gov_date.to_jdate(date).should == "å¹³æˆ26å¹´04æœˆ01æ—¥"
   end
 
   it "H24.10.1 to_date should be 2012-10-01" do

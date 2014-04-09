@@ -1,4 +1,4 @@
-# coding: sjis
+# coding: utf-8
 require 'date'
 $:.unshift File.dirname(__FILE__)
 require 'jyear'
@@ -8,7 +8,7 @@ class GovDate
     1
   end
   def to_jdate(date)
-    date.to_time.strftime("%K”N%mŒŽ%d“ú")
+    date.to_time.strftime("%Kå¹´%mæœˆ%dæ—¥")
   end
   def to_date(jdate)
     Date.parse(jdate).to_s
