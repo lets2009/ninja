@@ -90,6 +90,8 @@
 
   <section class="description">
     
+<p>日付関係</p>
+
   </section>
 
   
@@ -124,13 +126,20 @@
 
         <div class="method-description">
           
-          
+          <pre>和暦⇒西暦変換</pre>
+<dl class="rdoc-list note-list"><dt>jdate 
+<dd>
+<p>和暦年月日</p>
+</dd><dt>返り値
+<dd>
+<p>西暦年月日</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="to_date-source">
-            <pre><span class="ruby-comment"># File gov_date.rb, line 9</span>
+            <pre><span class="ruby-comment"># File gov_date.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_date</span>(<span class="ruby-identifier">jdate</span>)
   <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">jdate</span>).<span class="ruby-identifier">to_s</span>
 <span class="ruby-keyword">end</span></pre>
@@ -157,13 +166,20 @@
 
         <div class="method-description">
           
-          
+          <pre>西暦⇒和暦変換</pre>
+<dl class="rdoc-list note-list"><dt>date 
+<dd>
+<p>西暦年月日</p>
+</dd><dt>返り値
+<dd>
+<p>和暦年月日</p>
+</dd></dl>
           
           
 
           
           <div class="method-source-code" id="to_jdate-source">
-            <pre><span class="ruby-comment"># File gov_date.rb, line 6</span>
+            <pre><span class="ruby-comment"># File gov_date.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_jdate</span>(<span class="ruby-identifier">date</span>)
   <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%K年%m月%d日&quot;</span>)
 <span class="ruby-keyword">end</span></pre>
