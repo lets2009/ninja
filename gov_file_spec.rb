@@ -10,7 +10,7 @@ describe GovFile, "normal" do
 
   it 'csv_to_flat は CSVレコードからフラットファイルレコードを作成すること' do
     str_src = ['a','b','c','d','e']
-    str_dst = 'abcde'
+    str_dst = ' abcde'
     
     gov_file.set_layout("layout1.txt")
 
@@ -68,14 +68,9 @@ describe GovFile, "normal" do
     gov_file.check_layout(false).should eq(false)
   end
 
-  it 'check_layout は レイアウト定義ファイルの型が"C"/"I"以外の場合エラーとすること' do
-    gov_file.set_layout("layout2_error.txt")
-    gov_file.check_layout(false).should eq(false)
-  end
-
   it 'record_length は レコード長を返す' do
     gov_file.set_layout("layout1.txt")
-    gov_file.record_length.should eq(5)
+    gov_file.record_length.should eq(6)
     gov_file.set_layout("layout2.txt")
     gov_file.record_length.should eq(20)
   end
